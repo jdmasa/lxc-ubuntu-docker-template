@@ -1,0 +1,8 @@
+# Lintian doesn't know how to parse the damn files.
+postfix: missing-debconf-dependency-for-preinst
+# It's fine, since this usage results in a consistent state.
+postfix: unconditional-use-of-dpkg-statoverride
+# These aren't really spares.
+postfix: spare-manual-page
+# Required by FHS.
+postfix: ldconfig-escape usr/sbin/sendmail [usr/lib/sendmail]

@@ -1,0 +1,22 @@
+logrotate state -- version 2
+"/var/log/syslog" 2026-6-7-16:0:0
+"/var/log/dpkg.log" 2026-6-7-16:0:0
+"/var/log/auth.log" 2026-6-7-16:0:0
+"/var/log/apt/term.log" 2026-6-7-16:0:0
+"/var/log/apt/history.log" 2026-6-7-16:0:0
+"/var/log/alternatives.log" 2026-6-7-16:0:0
+"/var/log/debug" 2026-6-7-16:0:0
+"/var/log/mail.log" 2026-6-7-16:0:0
+"/var/log/kern.log" 2026-6-7-16:0:0
+"/var/log/ufw.log" 2026-6-7-16:0:0
+"/var/log/wtmp" 2026-6-7-16:0:0
+"/var/log/daemon.log" 2026-6-7-16:0:0
+"/var/log/mail.warn" 2026-6-7-16:0:0
+"/var/log/ubuntu-advantage.log" 2026-6-7-16:0:0
+"/var/log/btmp" 2026-6-7-16:0:0
+"/var/log/lpr.log" 2026-6-7-16:0:0
+"/var/log/mail.err" 2026-6-7-16:0:0
+"/var/log/user.log" 2026-6-7-16:0:0
+"/var/log/mail.info" 2026-6-7-16:0:0
+"/var/log/cron.log" 2026-6-7-16:0:0
+"/var/log/messages" 2026-6-7-16:0:0

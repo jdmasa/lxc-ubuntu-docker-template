@@ -1,0 +1,10 @@
+[Unit]
+Description=Copies updated resolv.conf to postfix chroot and restarts postfix.
+Documentation=man:postfix(1) man:resolvconf(8)
+
+[Service]
+Type=simple
+ExecStart=/etc/resolvconf/update-libc.d/postfix
+
+[Install]
+WantedBy=multi-user.target

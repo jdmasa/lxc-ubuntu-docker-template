@@ -1,0 +1,9 @@
+[Match]
+Name = eth0
+
+[Network]
+Description = Interface eth0 autoconfigured by PVE
+Address = 192.168.1.5/24
+Gateway = 192.168.1.1
+DHCP = ipv6
+IPv6AcceptRA = false

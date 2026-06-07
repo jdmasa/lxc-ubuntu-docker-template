@@ -1,0 +1,11 @@
+# This fixes pci.ids entry on Intel AC 9560 on Jasper Lake (LP: #2121006)
+# These definitions is a convertion from hwdb.d/pci.ids file in
+# https://github.com/systemd/systemd/blob/f41c0fa11eaaf1e695ddae8d1f5f7cd04a4a4d09/hwdb.d/pci.ids#L36246
+# and is updated in
+# https://github.com/systemd/systemd/commit/f41c0fa11eaaf1e695ddae8d1f5f7cd04a4a4d09
+
+pci:v00008086d00004DF0*
+ ID_MODEL_FROM_DATABASE=Jasper Lake PCH CNVi WiFi
+
+pci:v00008086d00004DF0sv00008086sd00004030*
+ ID_MODEL_FROM_DATABASE=Jasper Lake PCH CNVi WiFi (Wireless-AC 9560 160MHz)

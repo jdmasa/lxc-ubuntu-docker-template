@@ -1,0 +1,8 @@
+8bb9d13f04d4cebd45f176b5bc42803f  lib/systemd/system/docker.service
+10dee472f4cbf7a37b74df1d0c547417  lib/systemd/system/docker.socket
+0a1726b1c76ac4717d6277235ddae85b  usr/bin/docker-proxy
+4639280211f1c38c189cc056a041cd4a  usr/bin/dockerd
+d9ce688e112681942d2fcc9ba13d5df1  usr/libexec/docker/docker-init
+446a2e8ac9754229e446a0801cf587e5  usr/share/doc/docker-ce/README.md
+df7523d2747335b0e1e74b8952c0ba96  usr/share/doc/docker-ce/changelog.Debian.gz
+5e8ec237b0496d68b7b747d15efb8e90  usr/share/man/man8/dockerd.8.gz

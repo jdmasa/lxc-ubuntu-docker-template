@@ -1,0 +1,93 @@
+#!/bin/sh
+
+set -e
+
+# Debian Postfix preinst
+# LaMont Jones <lamont@debian.org>
+# Modified to use debconf by Colin Walters <levanti@verbum.org>
+
+# do we have debconf?
+if [ -f /usr/share/debconf/confmodule ]; then
+    . /usr/share/debconf/confmodule
+    DEBCONF=true
+else
+    DEBCONF=
+fi
+
+(umask 022; mkdir -p /var/spool/postfix)
+
+case "$1" in
+    install)
+	rm -f /var/spool/postfix/restart /var/spool/postfix/reload
+
+	if [ -L /etc/postfix/postfix-script ]; then
+		rm -f /etc/postfix/postfix-script
+	fi
+
+	;;
+
+    upgrade)
+	if [ -d /var/spool/postfix ] && [ -f /etc/postfix/main.cf ]; then
+	    touch /var/spool/postfix/restart
+	fi
+	export LANG=C	# for the comparison of mail version...
+
+	if [ -L /etc/postfix/postfix-script ]; then
+		rm -f /etc/postfix/postfix-script
+	fi
+
+	# If user has not modified master/main.proto, move aside so new version
+	# is installed (#991513)
+        cmp -s /usr/share/postfix/main.cf.dist /etc/postfix/main.cf.proto && \
+	    mv /etc/postfix/main.cf.proto /etc/postfix/main.cf.proto.old \
+	    || echo "/etc/postfix/main.cf.proto modified, not updating."
+        cmp -s /usr/share/postfix/master.cf.dist /etc/postfix/master.cf.proto && \
+	    mv /etc/postfix/master.cf.proto /etc/postfix/master.cf.proto.old \
+	    || echo "/etc/postfix/master.cf.proto modified, not updating."
+
+	;;
+
+    abort-upgrade)
+	if [ -f /etc/postfix/main.cf.proto.old ]; then
+	  mv /etc/postfix/main.cf.proto.old /etc/postfix/main.cf.proto
+	  echo "Restoring old /etc/postfix/main.cf.proto on failed upgrade."
+	fi
+	if [ -f /etc/postfix/master.cf.proto.old ]; then
+	  mv /etc/postfix/master.cf.proto.old /etc/postfix/master.cf.proto
+	  echo "Restoring old /etc/postfix/master.cf.proto on failed upgrade."
+	fi
+	;;
+
+    *)
+	echo "preinst called with unknown argument \`$1'" >&2
+	exit 1
+	;;
+esac
+
+if [ install = "$1" ] || [ upgrade = "$1" ]; then
+    # cleanup after past mistakes.
+    rm -f /usr/sbin/postconf.postfix
+    dpkg-divert --package postfix-tls --remove \
+	 --divert /usr/sbin/postconf.postfix \
+		  /usr/sbin/postconf >/dev/null 2>/dev/null
+fi
+
+# Automatically added by dh_installdeb/13.14.1ubuntu5
+dpkg-maintscript-helper rm_conffile /etc/postfix/makedefs.out 3.3.2-4\~ postfix -- "$@"
+# End automatically added section
+# Automatically added by dh_installinit/13.14.1ubuntu5
+if [ "$1" = "install" ] && [ -n "$2" ] && [ -e "/etc/init.d/postfix" ] ; then
+	chmod +x "/etc/init.d/postfix" >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = upgrade ] && [ -d /run/systemd/system ] ; then
+	deb-systemd-invoke stop 'postfix-resolvconf.path' 'postfix-resolvconf.service' >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = upgrade ] && [ -d /run/systemd/system ] ; then
+	deb-systemd-invoke stop 'postfix.service' >/dev/null || true
+fi
+# End automatically added section
+

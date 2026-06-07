@@ -1,0 +1,252 @@
+Package: libssh-4
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libldap-common
+Architecture: amd64
+Auto-Installed: 1
+
+Package: librtmp1
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libldap-2.5-0
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libbrotli1
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libperl5.34
+Architecture: amd64
+Auto-Installed: 1
+
+Package: dbus-user-session
+Architecture: amd64
+Auto-Installed: 1
+
+Package: perl
+Architecture: amd64
+Auto-Installed: 1
+
+Package: pigz
+Architecture: amd64
+Auto-Installed: 1
+
+Package: patch
+Architecture: amd64
+Auto-Installed: 1
+
+Package: docker-ce-rootless-extras
+Architecture: amd64
+Auto-Installed: 1
+
+Package: liberror-perl
+Architecture: amd64
+Auto-Installed: 1
+
+Package: perl-modules-5.34
+Architecture: amd64
+Auto-Installed: 1
+
+Package: git-man
+Architecture: amd64
+Auto-Installed: 1
+
+Package: netplan-generator
+Architecture: amd64
+Auto-Installed: 1
+
+Package: python3-cffi-backend
+Architecture: amd64
+Auto-Installed: 1
+
+Package: python3-netplan
+Architecture: amd64
+Auto-Installed: 1
+
+Package: ubuntu-pro-client-l10n
+Architecture: amd64
+Auto-Installed: 1
+
+Package: systemd-hwe-hwdb
+Architecture: amd64
+Auto-Installed: 1
+
+Package: ubuntu-pro-client
+Architecture: amd64
+Auto-Installed: 1
+
+Package: python3.12
+Architecture: amd64
+Auto-Installed: 1
+
+Package: dhcpcd-base
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libgdbm-compat4t64
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libsensors-config
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libunistring5
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libcbor0.10
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libpython3.12-minimal
+Architecture: amd64
+Auto-Installed: 1
+
+Package: dbus-daemon
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libproc2-0
+Architecture: amd64
+Auto-Installed: 1
+
+Package: sysstat
+Architecture: amd64
+Auto-Installed: 1
+
+Package: dbus-bin
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libtraceevent1-plugin
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libbpf1
+Architecture: amd64
+Auto-Installed: 1
+
+Package: trace-cmd
+Architecture: amd64
+Auto-Installed: 1
+
+Package: numactl
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libfdisk1
+Architecture: amd64
+Auto-Installed: 1
+
+Package: systemd-dev
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libassuan0
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libtracefs1
+Architecture: amd64
+Auto-Installed: 1
+
+Package: python3-mdurl
+Architecture: amd64
+Auto-Installed: 1
+
+Package: python3-rich
+Architecture: amd64
+Auto-Installed: 1
+
+Package: gir1.2-girepository-2.0
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libxkbcommon0
+Architecture: amd64
+Auto-Installed: 1
+
+Package: systemd-resolved
+Architecture: amd64
+Auto-Installed: 1
+
+Package: inetutils-telnet
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libtraceevent1
+Architecture: amd64
+Auto-Installed: 1
+
+Package: python3-markdown-it
+Architecture: amd64
+Auto-Installed: 1
+
+Package: dbus-session-bus-common
+Architecture: amd64
+Auto-Installed: 1
+
+Package: cron-daemon-common
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libsensors5
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libsystemd-shared
+Architecture: amd64
+Auto-Installed: 1
+
+Package: python3-pygments
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libnpth0t64
+Architecture: amd64
+Auto-Installed: 1
+
+Package: python3.12-minimal
+Architecture: amd64
+Auto-Installed: 1
+
+Package: perl-modules-5.38
+Architecture: amd64
+Auto-Installed: 1
+
+Package: ethtool
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libperl5.38t64
+Architecture: amd64
+Auto-Installed: 1
+
+Package: dbus-system-bus-common
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libpython3.12-stdlib
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libicu74
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libnetplan1
+Architecture: amd64
+Auto-Installed: 1
+
+Package: gcc-14-base
+Architecture: amd64
+Auto-Installed: 1
+
+Package: libevdev2
+Architecture: amd64
+Auto-Installed: 1
+
