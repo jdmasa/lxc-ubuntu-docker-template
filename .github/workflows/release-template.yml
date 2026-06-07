@@ -1,0 +1,34 @@
+name: Crear Plantilla Proxmox ZSTD
+
+on:
+  push:
+    tags:
+      - 'v*' # Se activará automáticamente cuando crees una etiqueta de versión (ej: v1.0.0)
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Permiso necesario para crear la Release
+
+    steps:
+      - name: Descargar el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar herramientas ZSTD
+        run: sudo apt-get update && sudo apt-get install -y zstd
+
+      - name: Comprimir archivos en tar.zst
+        run: |
+          # Este comando comprime todo lo que subas a la raíz del repositorio
+          # Excluyendo la carpeta interna de configuraciones de GitHub
+          tar --exclude='.git*' -I "zstd -19 -T0" -cf ubuntu-24.04-public.tar.zst .
+
+      - name: Crear GitHub Release y subir archivo
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ubuntu-24.04-public.tar.zst
+          name: "LXC Template Ubuntu 24.04 - Release ${{ github.ref_name }}"
+          body: "Esta es la versión limpia y sanitizada de la plantilla comprimida en ZSTD lista para Proxmox."
+          draft: false
+          prerelease: false
