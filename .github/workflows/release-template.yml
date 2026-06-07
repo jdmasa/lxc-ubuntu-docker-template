@@ -22,7 +22,7 @@ jobs:
         run: |
           # Este comando comprime todo lo que subas a la raíz del repositorio
           # Excluyendo la carpeta interna de configuraciones de GitHub
-          tar --exclude='.git*' -I "zstd -19 -T0" -cf ubuntu-24.04-public.tar.zst .
+          tar --exclude='.git*' -I "zstd -19 -T0" -cf ubuntu-24.04-docker-public.tar.zst .
 
       - name: Crear GitHub Release y subir archivo
         uses: softprops/action-gh-release@v2
