@@ -20,14 +20,13 @@ jobs:
 
       - name: Comprimir archivos en tar.zst
         run: |
-          # Este comando comprime todo lo que subas a la raíz del repositorio
-          # Excluyendo la carpeta interna de configuraciones de GitHub
-          tar --exclude='.git*' -I "zstd -19 -T0" -cf ubuntu-24.04-docker-public.tar.zst .
+          # Se excluye .git y el propio archivo resultante para evitar errores de lectura
+          tar --exclude='.git*' --exclude='ubuntu-24.04-docker-public.tar.zst' -I "zstd -19 -T0" -cf ubuntu-24.04-docker-public.tar.zst .
 
       - name: Crear GitHub Release y subir archivo
         uses: softprops/action-gh-release@v2
         with:
-          files: ubuntu-24.04-public.tar.zst
+          files: ubuntu-24.04-docker-public.tar.zst
           name: "LXC Template Ubuntu 24.04 - Release ${{ github.ref_name }}"
           body: "Esta es la versión limpia y sanitizada de la plantilla comprimida en ZSTD lista para Proxmox."
           draft: false
