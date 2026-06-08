@@ -20,8 +20,10 @@ jobs:
 
       - name: Comprimir archivos en tar.zst
         run: |
-          # Se excluye .git y el propio archivo resultante para evitar errores de lectura
-          tar --exclude='.git*' --exclude='ubuntu-24.04-docker-public.tar.zst' -I "zstd -19 -T0" -cf ubuntu-24.04-docker-public.tar.zst .
+          # Creamos el archivo en /tmp para evitar que tar intente leer lo que está escribiendo
+          tar --exclude='.git*' -I "zstd -19 -T0" -cf /tmp/ubuntu-24.04-docker-public.tar.zst .
+          # Lo movemos de vuelta al directorio de trabajo para que el siguiente paso lo encuentre
+          mv /tmp/ubuntu-24.04-docker-public.tar.zst .
 
       - name: Crear GitHub Release y subir archivo
         uses: softprops/action-gh-release@v2
